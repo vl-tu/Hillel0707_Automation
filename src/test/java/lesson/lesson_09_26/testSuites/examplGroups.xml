@@ -10,8 +10,8 @@
             </run>
         </groups>
         <classes>
-            <class name ="lesson_09_26.OurFirstTest"/>
-            <class name ="lesson_09_26.OurSecondTest"/>
+            <class name ="lesson.lesson_09_26.OurFirstTest"/>
+            <class name ="lesson.lesson_09_26.OurSecondTest"/>
         </classes>
 </test>
 

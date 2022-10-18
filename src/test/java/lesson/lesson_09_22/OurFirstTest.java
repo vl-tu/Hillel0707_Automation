@@ -1,4 +1,4 @@
-package lesson_09_22;
+package lesson.lesson_09_22;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;

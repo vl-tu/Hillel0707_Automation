@@ -1,4 +1,4 @@
-package lesson_10_13;
+package lesson.lesson_10_13;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -15,7 +15,7 @@ import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestCheckingColourByCSSValue {
+public class TestTittleOnProductPage {
     private WebDriver driver;
     WebDriverWait wait;
 
@@ -42,16 +42,16 @@ public class TestCheckingColourByCSSValue {
         buttonSearch.click();
 
         WebElement firstProduct = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class = 'goods-tile__title']")));
+        String titleOfFirstProduct = firstProduct.getText().trim();
         firstProduct.click();
+        WebElement productPageTittle = driver.findElement(By.xpath("//h1[@class='product__title']"));
 
-        WebElement firstActiveLink = driver.findElement(By.xpath("//a[@class='tabs__link tabs__link--active']"));
-        String colorOfFirstActiveLink = firstActiveLink.getCssValue("color");
-        assertEquals(colorOfFirstActiveLink, "rgba(0, 160, 70, 1)", "Color does not green");
+        String productPageTittleText = productPageTittle.getAttribute("innerText");
+        assertEquals(titleOfFirstProduct, productPageTittleText, "Tittles doesn`t equels");
     }
 
     @AfterMethod
     public void After(){
         driver.quit();
     }
-
 }
