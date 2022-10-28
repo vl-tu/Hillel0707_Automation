@@ -77,7 +77,7 @@ public class Test_homework_26 {
 
     private void WriteMapToTXT(Map<String, String> map) throws FileNotFoundException {
 
-        PrintWriter writer = new PrintWriter("Tittle and price of products");
+        PrintWriter writer = new PrintWriter("rozetkaTest.txt ");
 
         for (Map.Entry<String, String> i : map.entrySet()) {
             writer.println(i.getKey() + " - " + i.getValue());
