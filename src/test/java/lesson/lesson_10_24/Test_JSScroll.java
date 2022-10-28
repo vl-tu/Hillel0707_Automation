@@ -1,21 +1,20 @@
-package lesson.lesson_10_13;
+package lesson.lesson_10_24;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertEquals;
-
-public class TestCheckingColourByCSSValue {
+public class Test_JSScroll {
     private WebDriver driver;
     WebDriverWait wait;
 
@@ -31,25 +30,17 @@ public class TestCheckingColourByCSSValue {
     }
 
     @Test
-    public void RozetkaTest() {
+    public void RozetkaTest() throws InterruptedException {
 
-        WebElement searchInput = driver.findElement(By.name("search"));
-        searchInput.sendKeys("Mac");
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scroll(0,1000);", "");
 
-        WebElement buttonSearch = driver.findElement(By.xpath("//button[contains(@class, 'button_color_green')]"));
-        buttonSearch.click();
-
-        WebElement firstProduct = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class = 'goods-tile__title']")));
-        firstProduct.click();
-
-        WebElement firstActiveLink = driver.findElement(By.xpath("//a[@class='tabs__link tabs__link--active']"));
-        String colorOfFirstActiveLink = firstActiveLink.getCssValue("color");
-        assertEquals(colorOfFirstActiveLink, "rgba(0, 160, 70, 1)", "Color does not green");
+        TimeUnit.SECONDS.sleep(10);
     }
 
     @AfterMethod
     public void After(){
         driver.quit();
     }
-
 }
+

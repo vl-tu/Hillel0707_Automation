@@ -57,9 +57,9 @@ public class Test_homework_24 {
         assertTrue(LabelOnProductPage.isDisplayed(), "Label does not displayed on product page");
 
     }
-    @AfterMethod
-    public void After(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void After(){
+//        driver.quit();
+//    }
 }
 

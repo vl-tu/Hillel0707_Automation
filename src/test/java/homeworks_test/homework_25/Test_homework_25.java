@@ -60,10 +60,10 @@ public class Test_homework_25 {
 
     }
 
-    @AfterMethod
-    public void After() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void After() {
+//        driver.quit();
+//    }
 }
 
 
