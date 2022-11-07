@@ -19,7 +19,6 @@ public class homework_28 {
 
     @Test
     public void test() {
-
         $(By.xpath("//ul[@class='menu-categories menu-categories_type_main']//li[1]")).click();
         $((By.xpath("//img[@alt='Ноутбуки']/../.."))).click();
         String tittle1 = $(By.xpath("//a[contains(@href,'p354933153')]//span[@class='goods-tile__title']")).getText().trim();
